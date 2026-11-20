@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Neon Coast Cover Studio</title>
+<link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-mark">NC</span><span class="brand-name">Neon Coast <em>Cover Studio</em></span></div>
+  <p class="tagline">Your photo. Your caption. Poster art in one click. Works offline — nothing is uploaded.</p>
+</header>
+<main class="app">
+  <section class="controls" aria-label="Cover controls">
+    <h1>Make your cover</h1>
+    <div class="group">
+      <span class="group-label">1 · Photos</span>
+      <label class="file-label">Add photos <input id="photos" type="file" accept="image/*" multiple></label>
+      <div class="thumbs" id="thumbs"></div>
+      <p class="hint">Click a panel on the cover to select it, drag to move the photo, scroll to zoom. Or pick a photo for the selected panel:</p>
+      <div class="row" id="panelPhotos"></div>
+      <button id="fillAll" type="button">Fill every panel with panel 1's photo</button>
+    </div>
+    <div class="group">
+      <span class="group-label">2 · Layout</span>
+      <div class="row" id="layouts"></div>
+    </div>
+    <div class="group">
+      <span class="group-label">3 · Grade</span>
+      <div class="row" id="grades"></div>
+    </div>
+    <div class="group">
+      <span class="group-label">4 · Words</span>
+      <label>Title <input id="title" type="text" maxlength="24" value="NEON COAST"></label>
+      <label>Subtitle <input id="subtitle" type="text" maxlength="40" value="nights on the boulevard"></label>
+      <label>Badge <input id="badge" type="text" maxlength="24" value="EST. 2026"></label>
+    </div>
+    <div class="group">
+      <span class="group-label">5 · Export</span>
+      <label>Size
+        <select id="size">
+          <option value="1080x1080">Square · 1080 × 1080</option>
+          <option value="1080x1350">Portrait · 1080 × 1350</option>
+          <option value="1920x1080">Wide · 1920 × 1080</option>
+        </select>
+      </label>
+      <div class="row">
+        <button id="export" type="button" class="primary">Export PNG</button>
+        <button id="shuffle" type="button">Shuffle</button>
+        <button id="undo" type="button">Undo</button>
+        <button id="redo" type="button">Redo</button>
+      </div>
+      <p id="status" role="status"></p>
+    </div>
+  </section>
+  <section class="stage" aria-label="Cover preview">
+    <canvas id="cover" width="1080" height="1080" aria-label="The cover preview"></canvas>
+    <p class="stage-hint">Click a panel to select it · drag to pan · scroll to zoom</p>
+  </section>
+</main>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>
